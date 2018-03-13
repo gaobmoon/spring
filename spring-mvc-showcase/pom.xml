@@ -262,7 +262,7 @@
 				<groupId>org.codehaus.cargo</groupId>
 				<artifactId>cargo-maven2-plugin</artifactId>
 				<version>1.6.7</version>
-<!-- 			    <configuration>
+			    <configuration>
                    <container>
                        <containerId>tomcat9x</containerId>
                        <home>E:\apache-tomcat-9.0.6</home>
@@ -271,40 +271,40 @@
                        <type>existing</type>
                        <home>E:\apache-tomcat-9.0.6</home>
                    </configuration>                   
-                </configuration> -->
-			<configuration>
-			
-			  <!-- Container configuration -->
-			  <container>
-			    <containerId>tomcat9x</containerId>
-			    <type>remote</type>
-			  </container>
-			
-			  <!-- Configuration to use with the container (which will also configure the deployer) -->
-			  <configuration>
-			    <type>runtime</type>
-			    <properties>
-			      <cargo.remote.uri>http://localhost:8080/manager/text</cargo.remote.uri> 
-			      <cargo.remote.username>admin</cargo.remote.username>
-			      <cargo.remote.password>admin</cargo.remote.password>
-			    </properties>
-			  </configuration>
-			
-<!-- 			  Deployables configuration
-			  <deployables>
-			    <deployable>
-			      <groupId>${project.groupId}</groupId>
-			      <artifactId>${project.artifactId}</artifactId>
-			      <type>${project.packaging}</type>
-			      <properties>
-			        <context>${project.build.finalName}</context>
-			      </properties>
-			      <pingURL>http://127.0.0.1:8080/manager/html</pingURL>
-			      <pingTimeout>30000</pingTimeout>
-			    </deployable>
-			  </deployables> -->
-			
-			</configuration>                
+                </configuration>
+<!-- 				<configuration>
+				
+				  Container configuration
+				  <container>
+				    <containerId>tomcat9x</containerId>
+				    <type>remote</type>
+				  </container>
+				
+				  Configuration to use with the container (which will also configure the deployer)
+				  <configuration>
+				    <type>runtime</type>
+				    <properties>
+				      <cargo.remote.uri>http://localhost:8080/manager/text</cargo.remote.uri> 
+				      <cargo.remote.username>admin</cargo.remote.username>
+				      <cargo.remote.password>admin</cargo.remote.password>
+				    </properties>
+				  </configuration>
+				
+				  Deployables configuration
+				  <deployables>
+				    <deployable>
+				      <groupId>${project.groupId}</groupId>
+				      <artifactId>${project.artifactId}</artifactId>
+				      <type>${project.packaging}</type>
+				      <properties>
+				        <context>${project.build.finalName}</context>
+				      </properties>
+				      <pingURL>http://127.0.0.1:8080/manager/html</pingURL>
+				      <pingTimeout>30000</pingTimeout>
+				    </deployable>
+				  </deployables>
+				
+				</configuration>   -->              
 			</plugin>
 		</plugins>
 	</build>
