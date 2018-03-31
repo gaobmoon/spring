@@ -12,28 +12,28 @@
         "source": "C:\\Users\\zgb\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-23.2.1.aar\\26f846ac7017217ea05d3f0efd1a3976\\res\\layout\\abc_list_menu_item_icon.xml"
     },
     {
-        "merged": "D:\\StudentManage\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_list_divider_mtrl_alpha.9.png.flat",
-        "source": "C:\\Users\\zgb\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-23.2.1.aar\\26f846ac7017217ea05d3f0efd1a3976\\res\\drawable-xxhdpi-v4\\abc_list_divider_mtrl_alpha.9.png"
-    },
-    {
         "merged": "D:\\StudentManage\\app\\build\\intermediates\\res\\merged\\debug\\drawable_student_photo.png.flat",
         "source": "D:\\StudentManage\\app\\src\\main\\res\\drawable\\student_photo.png"
+    },
+    {
+        "merged": "D:\\StudentManage\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_list_divider_mtrl_alpha.9.png.flat",
+        "source": "C:\\Users\\zgb\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-23.2.1.aar\\26f846ac7017217ea05d3f0efd1a3976\\res\\drawable-xxhdpi-v4\\abc_list_divider_mtrl_alpha.9.png"
     },
     {
         "merged": "D:\\StudentManage\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_big_media_narrow.xml.flat",
         "source": "C:\\Users\\zgb\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-23.2.1.aar\\26f846ac7017217ea05d3f0efd1a3976\\res\\layout\\notification_template_big_media_narrow.xml"
     },
     {
-        "merged": "D:\\StudentManage\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_ic_star_black_36dp.png.flat",
-        "source": "C:\\Users\\zgb\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-23.2.1.aar\\26f846ac7017217ea05d3f0efd1a3976\\res\\drawable-mdpi-v4\\abc_ic_star_black_36dp.png"
+        "merged": "D:\\StudentManage\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_ic_menu_cut_mtrl_alpha.png.flat",
+        "source": "C:\\Users\\zgb\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-23.2.1.aar\\26f846ac7017217ea05d3f0efd1a3976\\res\\drawable-xxxhdpi-v4\\abc_ic_menu_cut_mtrl_alpha.png"
     },
     {
         "merged": "D:\\StudentManage\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_main.xml.flat",
         "source": "D:\\StudentManage\\app\\src\\main\\res\\layout\\activity_main.xml"
     },
     {
-        "merged": "D:\\StudentManage\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_ic_menu_cut_mtrl_alpha.png.flat",
-        "source": "C:\\Users\\zgb\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-23.2.1.aar\\26f846ac7017217ea05d3f0efd1a3976\\res\\drawable-xxxhdpi-v4\\abc_ic_menu_cut_mtrl_alpha.png"
+        "merged": "D:\\StudentManage\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_ic_star_black_36dp.png.flat",
+        "source": "C:\\Users\\zgb\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-23.2.1.aar\\26f846ac7017217ea05d3f0efd1a3976\\res\\drawable-mdpi-v4\\abc_ic_star_black_36dp.png"
     },
     {
         "merged": "D:\\StudentManage\\app\\build\\intermediates\\res\\merged\\debug\\anim_abc_slide_out_bottom.xml.flat",
@@ -108,6 +108,10 @@
         "source": "D:\\StudentManage\\app\\src\\main\\res\\layout\\student_score_item.xml"
     },
     {
+        "merged": "D:\\StudentManage\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_icon.jpg.flat",
+        "source": "D:\\StudentManage\\app\\src\\main\\res\\mipmap-mdpi\\icon.jpg"
+    },
+    {
         "merged": "D:\\StudentManage\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
         "source": "D:\\StudentManage\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
     },
@@ -116,8 +120,16 @@
         "source": "C:\\Users\\zgb\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-23.2.1.aar\\26f846ac7017217ea05d3f0efd1a3976\\res\\drawable-xhdpi-v4\\abc_ic_menu_share_mtrl_alpha.png"
     },
     {
+        "merged": "D:\\StudentManage\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_icon.jpg.flat",
+        "source": "D:\\StudentManage\\app\\src\\main\\res\\mipmap-xxxhdpi\\icon.jpg"
+    },
+    {
         "merged": "D:\\StudentManage\\app\\build\\intermediates\\res\\merged\\debug\\layout_admin_login_layout.xml.flat",
         "source": "D:\\StudentManage\\app\\src\\main\\res\\layout\\admin_login_layout.xml"
+    },
+    {
+        "merged": "D:\\StudentManage\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_icon_c.png.flat",
+        "source": "D:\\StudentManage\\app\\src\\main\\res\\mipmap-xxhdpi\\icon_c.png"
     },
     {
         "merged": "D:\\StudentManage\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_btn_check_to_on_mtrl_000.png.flat",
@@ -216,6 +228,10 @@
         "source": "C:\\Users\\zgb\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-23.2.1.aar\\26f846ac7017217ea05d3f0efd1a3976\\res\\drawable-xhdpi-v4\\abc_switch_track_mtrl_alpha.9.png"
     },
     {
+        "merged": "D:\\StudentManage\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_icon.jpg.flat",
+        "source": "D:\\StudentManage\\app\\src\\main\\res\\mipmap-xxhdpi\\icon.jpg"
+    },
+    {
         "merged": "D:\\StudentManage\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_ratingbar_small_material.xml.flat",
         "source": "C:\\Users\\zgb\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-23.2.1.aar\\26f846ac7017217ea05d3f0efd1a3976\\res\\drawable\\abc_ratingbar_small_material.xml"
     },
@@ -286,6 +302,10 @@
     {
         "merged": "D:\\StudentManage\\app\\build\\intermediates\\res\\merged\\debug\\layout_design_navigation_item_header.xml.flat",
         "source": "C:\\Users\\zgb\\.gradle\\caches\\transforms-1\\files-1.1\\design-23.2.1.aar\\f7e8d9c6fcb46acf7e13529826753fae\\res\\layout\\design_navigation_item_header.xml"
+    },
+    {
+        "merged": "D:\\StudentManage\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_icon_c.png.flat",
+        "source": "D:\\StudentManage\\app\\src\\main\\res\\mipmap-mdpi\\icon_c.png"
     },
     {
         "merged": "D:\\StudentManage\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_ic_voice_search_api_mtrl_alpha.png.flat",
@@ -968,8 +988,16 @@
         "source": "C:\\Users\\zgb\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-23.2.1.aar\\26f846ac7017217ea05d3f0efd1a3976\\res\\drawable-ldrtl-xxxhdpi-v17\\abc_ic_menu_copy_mtrl_am_alpha.png"
     },
     {
+        "merged": "D:\\StudentManage\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_icon_c.png.flat",
+        "source": "D:\\StudentManage\\app\\src\\main\\res\\mipmap-xhdpi\\icon_c.png"
+    },
+    {
         "merged": "D:\\StudentManage\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_scrubber_primary_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\zgb\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-23.2.1.aar\\26f846ac7017217ea05d3f0efd1a3976\\res\\drawable-mdpi-v4\\abc_scrubber_primary_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "D:\\StudentManage\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_icon.jpg.flat",
+        "source": "D:\\StudentManage\\app\\src\\main\\res\\mipmap-hdpi\\icon.jpg"
     },
     {
         "merged": "D:\\StudentManage\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_ic_clear_mtrl_alpha.png.flat",
@@ -1024,6 +1052,10 @@
         "source": "C:\\Users\\zgb\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-23.2.1.aar\\26f846ac7017217ea05d3f0efd1a3976\\res\\drawable-hdpi-v4\\abc_list_pressed_holo_light.9.png"
     },
     {
+        "merged": "D:\\StudentManage\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_icon.jpg.flat",
+        "source": "D:\\StudentManage\\app\\src\\main\\res\\mipmap-xhdpi\\icon.jpg"
+    },
+    {
         "merged": "D:\\StudentManage\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_btn_radio_to_on_mtrl_000.png.flat",
         "source": "C:\\Users\\zgb\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-23.2.1.aar\\26f846ac7017217ea05d3f0efd1a3976\\res\\drawable-xxhdpi-v4\\abc_btn_radio_to_on_mtrl_000.png"
     },
@@ -1070,6 +1102,10 @@
     {
         "merged": "D:\\StudentManage\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_textfield_search_activated_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\zgb\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-23.2.1.aar\\26f846ac7017217ea05d3f0efd1a3976\\res\\drawable-xhdpi-v4\\abc_textfield_search_activated_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "D:\\StudentManage\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_icon_c.png.flat",
+        "source": "D:\\StudentManage\\app\\src\\main\\res\\mipmap-xxxhdpi\\icon_c.png"
     },
     {
         "merged": "D:\\StudentManage\\app\\build\\intermediates\\res\\merged\\debug\\drawable_design_snackbar_background.xml.flat",
@@ -1406,6 +1442,10 @@
     {
         "merged": "D:\\StudentManage\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_menu_hardkey_panel_mtrl_mult.9.png.flat",
         "source": "C:\\Users\\zgb\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-23.2.1.aar\\26f846ac7017217ea05d3f0efd1a3976\\res\\drawable-xhdpi-v4\\abc_menu_hardkey_panel_mtrl_mult.9.png"
+    },
+    {
+        "merged": "D:\\StudentManage\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_icon_c.png.flat",
+        "source": "D:\\StudentManage\\app\\src\\main\\res\\mipmap-hdpi\\icon_c.png"
     },
     {
         "merged": "D:\\StudentManage\\app\\build\\intermediates\\res\\merged\\debug\\layout_design_navigation_item_separator.xml.flat",

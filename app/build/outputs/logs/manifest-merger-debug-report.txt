@@ -44,7 +44,7 @@ MERGED from [com.android.support:support-v4:23.2.1] C:\Users\zgb\.gradle\caches\
 	android:label
 		ADDED from D:\StudentManage\app\src\main\AndroidManifest.xml:8:9-41
 	android:icon
-		ADDED from D:\StudentManage\app\src\main\AndroidManifest.xml:7:9-43
+		ADDED from D:\StudentManage\app\src\main\AndroidManifest.xml:7:9-38
 	android:allowBackup
 		ADDED from D:\StudentManage\app\src\main\AndroidManifest.xml:6:9-35
 	android:theme

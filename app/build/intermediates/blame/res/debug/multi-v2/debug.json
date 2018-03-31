@@ -223,21 +223,6 @@
             ]
         },
         {
-            "outputFile": "D:\\StudentManage\\app\\build\\intermediates\\res\\merged\\debug\\values-it_values-it.arsc.flat",
-            "map": [
-                {
-                    "source": "C:\\Users\\zgb\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-23.2.1.aar\\26f846ac7017217ea05d3f0efd1a3976\\res\\values-it\\values-it.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,164,272,395,495,604,688,797,922,999,1075,1156,1262,1370,1468,1572,1677,1784,1906,2006",
-                        "endColumns": "108,107,122,99,108,83,108,124,76,75,80,105,107,97,103,104,106,121,99,100",
-                        "endOffsets": "159,267,390,490,599,683,792,917,994,1070,1151,1257,1365,1463,1567,1672,1779,1901,2001,2102"
-                    }
-                }
-            ]
-        },
-        {
             "outputFile": "D:\\StudentManage\\app\\build\\intermediates\\res\\merged\\debug\\values-es_values-es.arsc.flat",
             "map": [
                 {
@@ -248,6 +233,21 @@
                         "startOffsets": "55,172,280,403,516,624,709,810,938,1014,1090,1172,1279,1379,1478,1586,1693,1800,1922,2022",
                         "endColumns": "116,107,122,112,107,84,100,127,75,75,81,106,99,98,107,106,106,121,99,100",
                         "endOffsets": "167,275,398,511,619,704,805,933,1009,1085,1167,1274,1374,1473,1581,1688,1795,1917,2017,2118"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\StudentManage\\app\\build\\intermediates\\res\\merged\\debug\\values-it_values-it.arsc.flat",
+            "map": [
+                {
+                    "source": "C:\\Users\\zgb\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-23.2.1.aar\\26f846ac7017217ea05d3f0efd1a3976\\res\\values-it\\values-it.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,164,272,395,495,604,688,797,922,999,1075,1156,1262,1370,1468,1572,1677,1784,1906,2006",
+                        "endColumns": "108,107,122,99,108,83,108,124,76,75,80,105,107,97,103,104,106,121,99,100",
+                        "endOffsets": "159,267,390,490,599,683,792,917,994,1070,1151,1257,1365,1463,1567,1672,1779,1901,2001,2102"
                     }
                 }
             ]
@@ -328,21 +328,6 @@
             ]
         },
         {
-            "outputFile": "D:\\StudentManage\\app\\build\\intermediates\\res\\merged\\debug\\values-uz-rUZ_values-uz-rUZ.arsc.flat",
-            "map": [
-                {
-                    "source": "C:\\Users\\zgb\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-23.2.1.aar\\26f846ac7017217ea05d3f0efd1a3976\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,160,268,391,495,612,698,809,925,1005,1084,1168,1277,1384,1485,1593,1698,1803,1902",
-                        "endColumns": "104,107,122,103,116,85,110,115,79,78,83,108,106,100,107,104,104,98,100",
-                        "endOffsets": "155,263,386,490,607,693,804,920,1000,1079,1163,1272,1379,1480,1588,1693,1798,1897,1998"
-                    }
-                }
-            ]
-        },
-        {
             "outputFile": "D:\\StudentManage\\app\\build\\intermediates\\res\\merged\\debug\\values-ne-rNP_values-ne-rNP.arsc.flat",
             "map": [
                 {
@@ -353,6 +338,21 @@
                         "startOffsets": "55,160,268,391,495,603,694,801,928,1022,1112,1200,1310,1426,1529,1644,1746,1861,1992,2104",
                         "endColumns": "104,107,122,103,107,90,106,126,93,89,87,109,115,102,114,101,114,130,111,100",
                         "endOffsets": "155,263,386,490,598,689,796,923,1017,1107,1195,1305,1421,1524,1639,1741,1856,1987,2099,2200"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "D:\\StudentManage\\app\\build\\intermediates\\res\\merged\\debug\\values-uz-rUZ_values-uz-rUZ.arsc.flat",
+            "map": [
+                {
+                    "source": "C:\\Users\\zgb\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-23.2.1.aar\\26f846ac7017217ea05d3f0efd1a3976\\res\\values-uz-rUZ\\values-uz-rUZ.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,160,268,391,495,612,698,809,925,1005,1084,1168,1277,1384,1485,1593,1698,1803,1902",
+                        "endColumns": "104,107,122,103,116,85,110,115,79,78,83,108,106,100,107,104,104,98,100",
+                        "endOffsets": "155,263,386,490,607,693,804,920,1000,1079,1163,1272,1379,1480,1588,1693,1798,1897,1998"
                     }
                 }
             ]
