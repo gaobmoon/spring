@@ -1,0 +1,127 @@
+-- Merging decision tree log ---
+manifest
+ADDED from D:\StudentManage\app\src\main\AndroidManifest.xml:2:1-36:12
+INJECTED from D:\StudentManage\app\src\main\AndroidManifest.xml:2:1-36:12
+INJECTED from D:\StudentManage\app\src\main\AndroidManifest.xml:2:1-36:12
+INJECTED from D:\StudentManage\app\src\main\AndroidManifest.xml:2:1-36:12
+MERGED from [com.android.support:design:23.2.1] C:\Users\zgb\.gradle\caches\transforms-1\files-1.1\design-23.2.1.aar\f7e8d9c6fcb46acf7e13529826753fae\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:appcompat-v7:23.2.1] C:\Users\zgb\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.2.1.aar\26f846ac7017217ea05d3f0efd1a3976\AndroidManifest.xml:17:1-27:12
+MERGED from [com.android.support:animated-vector-drawable:23.2.1] C:\Users\zgb\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-23.2.1.aar\ac806f387b273236c19a70588adad956\AndroidManifest.xml:2:1-9:12
+MERGED from [com.android.support:support-vector-drawable:23.2.1] C:\Users\zgb\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-23.2.1.aar\c878083a77966a076c3c67647dd6f041\AndroidManifest.xml:2:1-9:12
+MERGED from [com.android.support:recyclerview-v7:23.2.1] C:\Users\zgb\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-23.2.1.aar\de2424d670706f37a65ed5d3347abf18\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-v4:23.2.1] C:\Users\zgb\.gradle\caches\transforms-1\files-1.1\support-v4-23.2.1.aar\de72251cec0ffba14daf9a1c7b311f83\AndroidManifest.xml:17:1-24:12
+INJECTED from D:\StudentManage\app\src\main\AndroidManifest.xml:2:1-36:12
+INJECTED from D:\StudentManage\app\src\main\AndroidManifest.xml:2:1-36:12
+INJECTED from D:\StudentManage\app\src\main\AndroidManifest.xml:2:1-36:12
+	package
+		ADDED from D:\StudentManage\app\src\main\AndroidManifest.xml:3:5-30
+		INJECTED from D:\StudentManage\app\src\main\AndroidManifest.xml
+		INJECTED from D:\StudentManage\app\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from D:\StudentManage\app\src\main\AndroidManifest.xml
+		ADDED from D:\StudentManage\app\src\main\AndroidManifest.xml:2:1-36:12
+		INJECTED from D:\StudentManage\app\src\main\AndroidManifest.xml
+	android:versionCode
+		INJECTED from D:\StudentManage\app\src\main\AndroidManifest.xml
+		ADDED from D:\StudentManage\app\src\main\AndroidManifest.xml:2:1-36:12
+		INJECTED from D:\StudentManage\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from D:\StudentManage\app\src\main\AndroidManifest.xml:2:11-69
+application
+ADDED from D:\StudentManage\app\src\main\AndroidManifest.xml:5:5-34:19
+MERGED from [com.android.support:design:23.2.1] C:\Users\zgb\.gradle\caches\transforms-1\files-1.1\design-23.2.1.aar\f7e8d9c6fcb46acf7e13529826753fae\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design:23.2.1] C:\Users\zgb\.gradle\caches\transforms-1\files-1.1\design-23.2.1.aar\f7e8d9c6fcb46acf7e13529826753fae\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:appcompat-v7:23.2.1] C:\Users\zgb\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.2.1.aar\26f846ac7017217ea05d3f0efd1a3976\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:appcompat-v7:23.2.1] C:\Users\zgb\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.2.1.aar\26f846ac7017217ea05d3f0efd1a3976\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:animated-vector-drawable:23.2.1] C:\Users\zgb\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-23.2.1.aar\ac806f387b273236c19a70588adad956\AndroidManifest.xml:7:5-20
+MERGED from [com.android.support:animated-vector-drawable:23.2.1] C:\Users\zgb\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-23.2.1.aar\ac806f387b273236c19a70588adad956\AndroidManifest.xml:7:5-20
+MERGED from [com.android.support:support-vector-drawable:23.2.1] C:\Users\zgb\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-23.2.1.aar\c878083a77966a076c3c67647dd6f041\AndroidManifest.xml:7:5-20
+MERGED from [com.android.support:support-vector-drawable:23.2.1] C:\Users\zgb\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-23.2.1.aar\c878083a77966a076c3c67647dd6f041\AndroidManifest.xml:7:5-20
+MERGED from [com.android.support:support-v4:23.2.1] C:\Users\zgb\.gradle\caches\transforms-1\files-1.1\support-v4-23.2.1.aar\de72251cec0ffba14daf9a1c7b311f83\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.2.1] C:\Users\zgb\.gradle\caches\transforms-1\files-1.1\support-v4-23.2.1.aar\de72251cec0ffba14daf9a1c7b311f83\AndroidManifest.xml:22:5-20
+	android:supportsRtl
+		ADDED from D:\StudentManage\app\src\main\AndroidManifest.xml:9:9-35
+	android:label
+		ADDED from D:\StudentManage\app\src\main\AndroidManifest.xml:8:9-41
+	android:icon
+		ADDED from D:\StudentManage\app\src\main\AndroidManifest.xml:7:9-43
+	android:allowBackup
+		ADDED from D:\StudentManage\app\src\main\AndroidManifest.xml:6:9-35
+	android:theme
+		ADDED from D:\StudentManage\app\src\main\AndroidManifest.xml:10:9-40
+activity#com.zgb.student.activity.MainActivity
+ADDED from D:\StudentManage\app\src\main\AndroidManifest.xml:11:9-17:20
+	android:name
+		ADDED from D:\StudentManage\app\src\main\AndroidManifest.xml:11:19-56
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from D:\StudentManage\app\src\main\AndroidManifest.xml:12:13-16:29
+action#android.intent.action.MAIN
+ADDED from D:\StudentManage\app\src\main\AndroidManifest.xml:13:17-69
+	android:name
+		ADDED from D:\StudentManage\app\src\main\AndroidManifest.xml:13:25-66
+category#android.intent.category.LAUNCHER
+ADDED from D:\StudentManage\app\src\main\AndroidManifest.xml:15:17-77
+	android:name
+		ADDED from D:\StudentManage\app\src\main\AndroidManifest.xml:15:27-74
+activity#com.zgb.student.activity.admin_login_activity
+ADDED from D:\StudentManage\app\src\main\AndroidManifest.xml:19:9-76
+	android:name
+		ADDED from D:\StudentManage\app\src\main\AndroidManifest.xml:19:19-64
+activity#com.zgb.student.activity.student_login_activity
+ADDED from D:\StudentManage\app\src\main\AndroidManifest.xml:20:9-78
+	android:name
+		ADDED from D:\StudentManage\app\src\main\AndroidManifest.xml:20:19-66
+activity#com.zgb.student.activity.admin_activity
+ADDED from D:\StudentManage\app\src\main\AndroidManifest.xml:21:9-23:56
+	android:launchMode
+		ADDED from D:\StudentManage\app\src\main\AndroidManifest.xml:23:13-44
+	android:name
+		ADDED from D:\StudentManage\app\src\main\AndroidManifest.xml:22:13-52
+activity#com.zgb.student.activity.studentInfo_activity
+ADDED from D:\StudentManage\app\src\main\AndroidManifest.xml:24:9-76
+	android:name
+		ADDED from D:\StudentManage\app\src\main\AndroidManifest.xml:24:19-64
+activity#com.zgb.student.activity.addStudent_info_activity
+ADDED from D:\StudentManage\app\src\main\AndroidManifest.xml:25:9-80
+	android:name
+		ADDED from D:\StudentManage\app\src\main\AndroidManifest.xml:25:19-68
+activity#com.zgb.student.activity.student_total_score
+ADDED from D:\StudentManage\app\src\main\AndroidManifest.xml:26:9-75
+	android:name
+		ADDED from D:\StudentManage\app\src\main\AndroidManifest.xml:26:19-63
+activity#com.zgb.student.activity.student_activity
+ADDED from D:\StudentManage\app\src\main\AndroidManifest.xml:27:9-72
+	android:name
+		ADDED from D:\StudentManage\app\src\main\AndroidManifest.xml:27:19-60
+receiver#com.zgb.student.tools.MyBroadcastBestPractice
+ADDED from D:\StudentManage\app\src\main\AndroidManifest.xml:29:9-33:20
+	android:name
+		ADDED from D:\StudentManage\app\src\main\AndroidManifest.xml:29:19-64
+intent-filter#com.zgb.OfflineBradcast
+ADDED from D:\StudentManage\app\src\main\AndroidManifest.xml:30:13-32:29
+action#com.zgb.OfflineBradcast
+ADDED from D:\StudentManage\app\src\main\AndroidManifest.xml:31:17-66
+	android:name
+		ADDED from D:\StudentManage\app\src\main\AndroidManifest.xml:31:25-63
+uses-sdk
+INJECTED from D:\StudentManage\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from D:\StudentManage\app\src\main\AndroidManifest.xml
+MERGED from [com.android.support:design:23.2.1] C:\Users\zgb\.gradle\caches\transforms-1\files-1.1\design-23.2.1.aar\f7e8d9c6fcb46acf7e13529826753fae\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:design:23.2.1] C:\Users\zgb\.gradle\caches\transforms-1\files-1.1\design-23.2.1.aar\f7e8d9c6fcb46acf7e13529826753fae\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:appcompat-v7:23.2.1] C:\Users\zgb\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.2.1.aar\26f846ac7017217ea05d3f0efd1a3976\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:appcompat-v7:23.2.1] C:\Users\zgb\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.2.1.aar\26f846ac7017217ea05d3f0efd1a3976\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:animated-vector-drawable:23.2.1] C:\Users\zgb\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-23.2.1.aar\ac806f387b273236c19a70588adad956\AndroidManifest.xml:5:5-44
+MERGED from [com.android.support:animated-vector-drawable:23.2.1] C:\Users\zgb\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-23.2.1.aar\ac806f387b273236c19a70588adad956\AndroidManifest.xml:5:5-44
+MERGED from [com.android.support:support-vector-drawable:23.2.1] C:\Users\zgb\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-23.2.1.aar\c878083a77966a076c3c67647dd6f041\AndroidManifest.xml:5:5-43
+MERGED from [com.android.support:support-vector-drawable:23.2.1] C:\Users\zgb\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-23.2.1.aar\c878083a77966a076c3c67647dd6f041\AndroidManifest.xml:5:5-43
+MERGED from [com.android.support:recyclerview-v7:23.2.1] C:\Users\zgb\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-23.2.1.aar\de2424d670706f37a65ed5d3347abf18\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:recyclerview-v7:23.2.1] C:\Users\zgb\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-23.2.1.aar\de2424d670706f37a65ed5d3347abf18\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:23.2.1] C:\Users\zgb\.gradle\caches\transforms-1\files-1.1\support-v4-23.2.1.aar\de72251cec0ffba14daf9a1c7b311f83\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:23.2.1] C:\Users\zgb\.gradle\caches\transforms-1\files-1.1\support-v4-23.2.1.aar\de72251cec0ffba14daf9a1c7b311f83\AndroidManifest.xml:20:5-43
+INJECTED from D:\StudentManage\app\src\main\AndroidManifest.xml
+	tools:overrideLibrary
+		ADDED from [com.android.support:appcompat-v7:23.2.1] C:\Users\zgb\.gradle\caches\transforms-1\files-1.1\appcompat-v7-23.2.1.aar\26f846ac7017217ea05d3f0efd1a3976\AndroidManifest.xml:23:9-75
+	android:minSdkVersion
+		INJECTED from D:\StudentManage\app\src\main\AndroidManifest.xml
+		ADDED from D:\StudentManage\app\src\main\AndroidManifest.xml
+		INJECTED from D:\StudentManage\app\src\main\AndroidManifest.xml

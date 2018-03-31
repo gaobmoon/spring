@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.zgb.studenmanagement"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk android:minSdkVersion="15" />
+
+    <application
+        android:allowBackup="true"
+        android:debuggable="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme" >
+        <activity android:name="com.zgb.student.activity.MainActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.zgb.student.activity.admin_login_activity" />
+        <activity android:name="com.zgb.student.activity.student_login_activity" />
+        <activity
+            android:name="com.zgb.student.activity.admin_activity"
+            android:launchMode="singleTask" />
+        <activity android:name="com.zgb.student.activity.studentInfo_activity" />
+        <activity android:name="com.zgb.student.activity.addStudent_info_activity" />
+        <activity android:name="com.zgb.student.activity.student_total_score" />
+        <activity android:name="com.zgb.student.activity.student_activity" />
+
+        <receiver android:name="com.zgb.student.tools.MyBroadcastBestPractice" >
+            <intent-filter>
+                <action android:name="com.zgb.OfflineBradcast" />
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>
