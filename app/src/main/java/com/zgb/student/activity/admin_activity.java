@@ -12,7 +12,7 @@ import com.zgb.student.R;
 
 /**
  * 管理员的管理界面
- * Created by com.zgb on 2016/9/30.
+ * Created by zgb on 2018.03.31
  */
 public class admin_activity extends Activity {
 
@@ -29,8 +29,8 @@ public class admin_activity extends Activity {
 
         select = (Button) findViewById(R.id.admin_activity_select);
         add = (Button) findViewById(R.id.admin_activity_add);
-        order = (Button) findViewById(R.id.admin_activity_order);
-        forceOffline = (TextView) findViewById(R.id.admin_activity_forceOffline);
+ //       order = (Button) findViewById(R.id.admin_activity_order);
+  //      forceOffline = (TextView) findViewById(R.id.admin_activity_forceOffline);
 
         select.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,23 +51,23 @@ public class admin_activity extends Activity {
         });
 
 
-        order.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent(admin_activity.this,student_total_score.class);
-                startActivity(intent);
-            }
-        });
+//        order.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent=new Intent(admin_activity.this,student_total_score.class);
+//                startActivity(intent);
+//            }
+//        });
 
 
-        forceOffline.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent();
-                intent.setAction("com.zgb.com.OfflineBradcast");
-                sendBroadcast(intent);
-            }
-        });
+//        forceOffline.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent();
+//                intent.setAction("com.zgb.com.OfflineBradcast");
+//                sendBroadcast(intent);
+//            }
+//        });
 
 
     }

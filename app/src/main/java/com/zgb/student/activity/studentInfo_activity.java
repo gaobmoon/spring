@@ -23,7 +23,7 @@ import java.util.List;
 
 /**
  * 展示学生信息的activity
- * Created by com.zgb on 2016/10/1.
+ * Created by zgb on 2018.03.31
  */
 public class studentInfo_activity extends Activity {
     private List<Student> studentList = new ArrayList<Student>();
@@ -64,16 +64,18 @@ public class studentInfo_activity extends Activity {
                         StringBuilder sb = new StringBuilder();
                         sb.append("姓名：" + student.getName() + "\n");
                         sb.append("学号：" + student.getId() + "\n");
-                        sb.append("手机号：" + student.getNumber() + "\n");
-                        int math = student.getMathScore();//数学成绩
-                        sb.append("数学成绩：" + math + "\n");
-                        int chinese = student.getChineseScore();
-                        sb.append("语文成绩：" + chinese + "\n");
-                        int english = student.getEnglishScore();
-                        sb.append("英语成绩：" + english + "\n");
-                        int sum = math + chinese + english;//总成绩
-                        sb.append("总成绩：" + sum + "\n");
-                        sb.append("排名："+student.getOrder()+"\n");
+                        sb.append("性别：" + student.getSex() + "\n");
+ //                       sb.append("健康状况：" + student.getInfo() + "\n");
+//                        sb.append("手机号：" + student.getNumber() + "\n");
+//                        int math = student.getMathScore();//数学成绩
+//                        sb.append("数学成绩：" + math + "\n");
+//                        int chinese = student.getChineseScore();
+//                        sb.append("语文成绩：" + chinese + "\n");
+//                        int english = student.getEnglishScore();
+//                        sb.append("英语成绩：" + english + "\n");
+//                        int sum = math + chinese + english;//总成绩
+//                        sb.append("总成绩：" + sum + "\n");
+//                        sb.append("排名："+student.getOrder()+"\n");
                         select_builder.setMessage(sb.toString());
                         select_builder.create().show();
 

@@ -6,7 +6,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 /**
  * 单例模式
- * Created by com.zgb on 2016/10/3.
+ * Created by zgb on 2018.03.31
  */
 public class DatabaseHelper extends SQLiteOpenHelper {
     private static DatabaseHelper instance;

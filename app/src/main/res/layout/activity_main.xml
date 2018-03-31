@@ -15,7 +15,7 @@
         android:id="@+id/main_activity_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="40dp"
         android:gravity="center"
         android:text="欢迎使用学生管理系统"
         android:textSize="20sp" />

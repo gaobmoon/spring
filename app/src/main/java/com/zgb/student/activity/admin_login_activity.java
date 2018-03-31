@@ -100,8 +100,8 @@ public class admin_login_activity extends Activity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         String codeInfo = code.getText().toString();
-                        //注册码要为10086
-                        if (codeInfo.equals("10086")) {
+                        //注册码要为world
+                        if (codeInfo.equals("world")) {
                             String nameInfo = name.getText().toString();
                             String firstPasswordInfo = firstPassword.getText().toString();
                             String secondPasswordInfo = secondPassword.getText().toString();
