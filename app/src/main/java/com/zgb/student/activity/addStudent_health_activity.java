@@ -35,7 +35,7 @@ import java.util.Map;
 /**
  * 增加学生健康信息
  */
-public class addStudent_health_activity extends Activity  implements View.OnClickListener{
+public class addStudent_health_activity extends Activity  implements View.OnClickListener,TextWatcher {
 
     private EditText name;
     private EditText sex;
@@ -49,7 +49,7 @@ public class addStudent_health_activity extends Activity  implements View.OnClic
 
     private LinearLayout empty;
     private AutoCompleteTextView search;
-    private String[] str = {"大大大", "大大小", "大小大", "大小小", "小大大", "小大小", "小大小", "小小小"};
+
     Cursor cursor;
 
     private String oldID;//用于防治修改信息时将ID也修改了，而原始的有该ID的学生信息还保存在数据库中
@@ -68,17 +68,39 @@ public class addStudent_health_activity extends Activity  implements View.OnClic
         empty = (LinearLayout) findViewById(R.id.empty);
         empty.setOnClickListener(this);
         search = (AutoCompleteTextView) findViewById(R.id.search);
+
+
+
+        dbHelper = DatabaseHelper.getInstance(this);
+        //获取数据库对象
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
+
+
+        List<String> studentList =query();
         // 自动提示适配器
         //      ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, str);
         // 支持拼音检索
         SearchAdapter<String> adapter = new SearchAdapter<String>(addStudent_health_activity.this,
-                android.R.layout.simple_list_item_1, str, SearchAdapter.ALL);
+                android.R.layout.simple_list_item_1, studentList, SearchAdapter.ALL);
         search.setAdapter(adapter);
+        search.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
+            @Override
 
-        dbHelper = DatabaseHelper.getInstance(this);
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-    //    initView();
+                Object obj = parent.getItemAtPosition(position);
+                Toast.makeText(addStudent_health_activity.this, obj.toString(), Toast.LENGTH_SHORT).show();
+                //这个就是取点击的条目绑定的值,
+
+                //实际上返回的就是适配器的 Adapter.getItem(position);
+
+            }
+
+        });
+      //  search.getOnItemSelectedListener().onNothingSelected();
+ //       search.addTextChangedListener(this);
+
         name = (EditText) findViewById(R.id.add_student_health_name);
         sex = (EditText) findViewById(R.id.add_student_health_sex);
         id = (EditText) findViewById(R.id.add_student_health_id);
@@ -173,7 +195,7 @@ public class addStudent_health_activity extends Activity  implements View.OnClic
 
 
         //EditText添加监听
-        mEditText.addTextChangedListener(new TextWatcher() {
+        search.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {}//文本改变之前执行
 
@@ -237,6 +259,25 @@ public class addStudent_health_activity extends Activity  implements View.OnClic
         return studentList;
 
     }
+    //初始化学生信息
+    private List<String> query() {
+        List<String> studentList = new ArrayList<String>();
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+
+        Cursor cursor = db.rawQuery("select * from student s  order by s.id", null);
+        Map<String, Object> map;
+        while (cursor.moveToNext()) {
+
+            String name = cursor.getString(cursor.getColumnIndex("name"));
+//            String password = cursor.getString(cursor.getColumnIndex("password"));
+            String sex = cursor.getString(cursor.getColumnIndex("sex"));
+
+            studentList.add(name);
+        }
+        cursor.close();
+        return studentList;
+
+    }
 
     @Override
     public void onClick(View v) {
@@ -245,5 +286,25 @@ public class addStudent_health_activity extends Activity  implements View.OnClic
                 search.setText("");
                 break;
         }
+    }
+    @Override
+    public void beforeTextChanged(CharSequence s, int start, int count,
+                                  int after) {
+        // TODO Auto-generated method stub
+
+    }
+
+    @Override
+    public void onTextChanged(CharSequence s, int start, int before, int count) {
+        // TODO Auto-generated method stub
+
+    }
+
+    @Override
+    public void afterTextChanged(Editable s) {
+        // TODO Auto-generated method stub
+
+        Toast.makeText(addStudent_health_activity.this, search.getText(), Toast.LENGTH_SHORT).show();
+
     }
 }
