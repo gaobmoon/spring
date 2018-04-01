@@ -12,8 +12,10 @@ import android.view.View;
 import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.SimpleAdapter;
 import android.widget.Toast;
 import android.widget.ListView;
@@ -22,6 +24,7 @@ import com.zgb.student.model.Student;
 import com.zgb.student.tools.DatabaseHelper;
 import com.zgb.student.tools.QueryAdapter;
 import com.zgb.student.tools.StudentAdapter;
+import com.zgb.student.util.SearchAdapter;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -32,7 +35,7 @@ import java.util.Map;
 /**
  * 增加学生健康信息
  */
-public class addStudent_health_activity extends Activity {
+public class addStudent_health_activity extends Activity  implements View.OnClickListener{
 
     private EditText name;
     private EditText sex;
@@ -43,6 +46,10 @@ public class addStudent_health_activity extends Activity {
     private EditText mEditText;
     private ListView mListView;
 
+
+    private LinearLayout empty;
+    private AutoCompleteTextView search;
+    private String[] str = {"大大大", "大大小", "大小大", "大小小", "小大大", "小大小", "小大小", "小小小"};
     Cursor cursor;
 
     private String oldID;//用于防治修改信息时将ID也修改了，而原始的有该ID的学生信息还保存在数据库中
@@ -57,6 +64,17 @@ public class addStudent_health_activity extends Activity {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.add_student_health);
+
+        empty = (LinearLayout) findViewById(R.id.empty);
+        empty.setOnClickListener(this);
+        search = (AutoCompleteTextView) findViewById(R.id.search);
+        // 自动提示适配器
+        //      ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, str);
+        // 支持拼音检索
+        SearchAdapter<String> adapter = new SearchAdapter<String>(addStudent_health_activity.this,
+                android.R.layout.simple_list_item_1, str, SearchAdapter.ALL);
+        search.setAdapter(adapter);
+
 
         dbHelper = DatabaseHelper.getInstance(this);
 
@@ -218,5 +236,14 @@ public class addStudent_health_activity extends Activity {
         cursor.close();
         return studentList;
 
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.empty:
+                search.setText("");
+                break;
+        }
     }
 }

@@ -154,7 +154,7 @@ public class studentInfo_activity extends Activity {
 //            int chineseScore = cursor.getInt(cursor.getColumnIndex("chineseScore"));
 //            int englishScore = cursor.getInt(cursor.getColumnIndex("englishScore"));
 //            int order=cursor.getInt(cursor.getColumnIndex("ranking"));
-            studentList.add(new Student(id,name,sex,null,info,measureDate));
+            studentList.add(new Student(name,sex,id,null,info,measureDate));
         }
         cursor.close();
 
