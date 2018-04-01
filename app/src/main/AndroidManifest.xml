@@ -23,6 +23,7 @@
             android:launchMode="singleTask"></activity>
         <activity android:name=".activity.studentInfo_activity"></activity>
         <activity android:name=".activity.addStudent_info_activity"></activity>
+        <activity android:name=".activity.addStudent_health_activity"></activity>
         <activity android:name=".activity.student_total_score"></activity>
         <activity android:name=".activity.student_activity"></activity>
 

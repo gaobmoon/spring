@@ -63,7 +63,7 @@
 
     <Button
         style="@style/common_button_style"
-        android:id="@+id/admin_activity_order"
+        android:id="@+id/admin_activity_health"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
@@ -71,16 +71,16 @@
         android:layout_marginTop="10dp"
         android:layout_marginLeft="70dp"
         android:gravity="center"
-        android:text="查看总成绩排名"/>
+        android:text="新增健康信息"/>
 
-    <TextView
-        android:id="@+id/admin_activity_forceOffline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:text="强制下线"
-        android:textColor="@color/vertical_sep_color"/>
+    <!--<TextView-->
+        <!--android:id="@+id/admin_activity_forceOffline"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:text="强制下线"-->
+        <!--android:textColor="@color/vertical_sep_color"/>-->
 
 
 </RelativeLayout>

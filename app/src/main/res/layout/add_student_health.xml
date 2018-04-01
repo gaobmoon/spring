@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="10dp"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:paddingTop="10dp">
+
+    <EditText
+        android:id="@+id/edittext"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/searchbox"
+        android:hint="请输入搜索内容"
+        android:maxLength="10"
+        android:paddingLeft="15dp"
+        android:singleLine="true"
+        android:textSize="20sp" />
+
+    <ListView
+        android:id="@+id/listview"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_weight="1"></ListView>
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="60dp"
+        android:text="姓        名："
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/add_student_health_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="60dp"
+        android:layout_toRightOf="@+id/name" />
+
+    <TextView
+        android:id="@+id/sex"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/name"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="25dp"
+        android:text="性        别："
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/add_student_health_sex"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/add_student_health_name"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="7dp"
+        android:layout_toRightOf="@+id/name" />
+
+    <TextView
+        android:id="@+id/id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/sex"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="25dp"
+        android:text="学        号："
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/add_student_health_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/add_student_health_sex"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="6dp"
+        android:layout_toRightOf="@+id/name"
+  />
+
+    <Button
+        android:id="@+id/add_student_health_sure"
+        style="@style/common_button_style"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="25dp"
+        android:layout_marginLeft="15dp"
+        android:gravity="center"
+        android:text="确定" />
+
+</RelativeLayout>

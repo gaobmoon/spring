@@ -18,8 +18,8 @@ public class admin_activity extends Activity {
 
     private Button select;//查询学生信息按钮
     private Button add;//添加学生信息按钮
-    private Button order;//查看总成绩排名按钮
-    private TextView forceOffline;//强制下线
+    private Button addHealth;//增加学生健康信息
+//    private TextView forceOffline;//强制下线
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +29,7 @@ public class admin_activity extends Activity {
 
         select = (Button) findViewById(R.id.admin_activity_select);
         add = (Button) findViewById(R.id.admin_activity_add);
- //       order = (Button) findViewById(R.id.admin_activity_order);
+        addHealth = (Button) findViewById(R.id.admin_activity_health);
   //      forceOffline = (TextView) findViewById(R.id.admin_activity_forceOffline);
 
         select.setOnClickListener(new View.OnClickListener() {
@@ -51,13 +51,14 @@ public class admin_activity extends Activity {
         });
 
 
-//        order.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent=new Intent(admin_activity.this,student_total_score.class);
-//                startActivity(intent);
-//            }
-//        });
+        addHealth.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(admin_activity.this,addStudent_health_activity.class);
+                intent.putExtra("haveData","false");
+                startActivity(intent);
+            }
+        });
 
 
 //        forceOffline.setOnClickListener(new View.OnClickListener() {
