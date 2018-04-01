@@ -41,7 +41,7 @@ public class student_total_score extends Activity {
 
     //初始化数据
     private void initInfo() {
-        SQLiteDatabase db = dbHelper.getWritableDatabase();
+/*        SQLiteDatabase db = dbHelper.getWritableDatabase();
         Cursor cursor = db.rawQuery("select * from student order by mathScore+chineseScore+englishScore desc", null);
         int i = 0;
         while (cursor.moveToNext()) {
@@ -57,7 +57,7 @@ public class student_total_score extends Activity {
             db.execSQL("update  student set ranking=? where id=?",new String[]{String.valueOf(i),id});//将排名插入数据库
             list.add(new Student(chineseScore, englishScore, id, mathScore, name, number, password, sex, i));
         }
-        cursor.close();
+        cursor.close();*/
 
     }
 

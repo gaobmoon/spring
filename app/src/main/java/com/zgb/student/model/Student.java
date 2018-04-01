@@ -9,50 +9,43 @@ public class Student {
     private String sex;
     private String id;//学号
     private String password;//学生登录密码
-    private String number;//手机号
-    private int MathScore;
-    private int ChineseScore;
-    private int EnglishScore;
-    private int order;//名次
+    private String info;//健康状况
+    private String measureDate;//测量日期
 
-
-    public Student(int chineseScore, int englishScore, String id, int mathScore, String name, String number, String password, String sex, int order) {
-
-        this.id = id;
+    public Student(String name, String sex, String id, String password, String info, String measureDate) {
         this.name = name;
-        this.number = number;
-        this.password = password;
         this.sex = sex;
-        ChineseScore = chineseScore;
-        EnglishScore = englishScore;
-        MathScore = mathScore;
-        this.order=order;
+        this.id = id;
+        this.password = password;
+        this.info = info;
+        this.measureDate = measureDate;
+    }
+    //    private HealthInfo healthInfo;//学生健康状况
+//    private String number;//手机号
+//    private int MathScore;
+//    private int ChineseScore;
+//    private int EnglishScore;
+//    private int order;//名次
+
+
+    public String getInfo() {
+        return info;
     }
 
-
-    public int getChineseScore() {
-        return ChineseScore;
-    }
-
-    public int getEnglishScore() {
-        return EnglishScore;
+    public String getMeasureDate() {
+        return measureDate;
     }
 
     public String getId() {
         return id;
     }
 
-    public int getMathScore() {
-        return MathScore;
-    }
+
 
     public String getName() {
         return name;
     }
 
-    public String getNumber() {
-        return number;
-    }
 
     public String getPassword() {
         return password;
@@ -62,8 +55,6 @@ public class Student {
         return sex;
     }
 
-    public int getOrder() {
-        return order;
-    }
+
 
 }

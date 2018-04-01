@@ -24,11 +24,10 @@ public class addStudent_info_activity extends Activity {
     private EditText name;
     private EditText sex;
     private EditText id;
-    private EditText number;
+    private EditText measureDate;
     private EditText password;
-    private EditText math;
-    private EditText chinese;
-    private EditText english;
+    private EditText info;
+
 
     private String oldID;//用于防治修改信息时将ID也修改了，而原始的有该ID的学生信息还保存在数据库中
 
@@ -46,11 +45,11 @@ public class addStudent_info_activity extends Activity {
         name = (EditText) findViewById(R.id.add_student_layout_name);
         sex = (EditText) findViewById(R.id.add_student_layout_sex);
         id = (EditText) findViewById(R.id.add_student_layout_id);
-        number = (EditText) findViewById(R.id.add_student_layout_number);
-        password = (EditText) findViewById(R.id.add_student_layout_password);
-        math = (EditText) findViewById(R.id.add_student_layout_math);
-        chinese = (EditText) findViewById(R.id.add_student_layout_chinese);
-        english = (EditText) findViewById(R.id.add_student_layout_english);
+    //    number = (EditText) findViewById(R.id.add_student_layout_number);
+   //     password = (EditText) findViewById(R.id.add_student_layout_password);
+  //      math = (EditText) findViewById(R.id.add_student_layout_math);
+    //    chinese = (EditText) findViewById(R.id.add_student_layout_chinese);
+    //    english = (EditText) findViewById(R.id.add_student_layout_english);
 
         dbHelper = DatabaseHelper.getInstance(this);
 
@@ -70,11 +69,11 @@ public class addStudent_info_activity extends Activity {
                 String id_ = id.getText().toString();
                 String name_ = name.getText().toString();
                 String sex_ = sex.getText().toString();
-                String password_ = password.getText().toString();
-                String number_ = number.getText().toString();
-                String mathScore = math.getText().toString();
-                String chineseScore = chinese.getText().toString();
-                String englishScore = english.getText().toString();
+//                String password_ = password.getText().toString();
+//                String number_ = number.getText().toString();
+//                String mathScore = math.getText().toString();
+//                String chineseScore = chinese.getText().toString();
+//                String englishScore = english.getText().toString();
 
                 if (!TextUtils.isEmpty(id_) && !TextUtils.isEmpty(name_) && !TextUtils.isEmpty(sex_)) {
 
@@ -88,7 +87,7 @@ public class addStudent_info_activity extends Activity {
                         if (cursor.moveToNext()) {
                             Toast.makeText(addStudent_info_activity.this, "已有学生使用该学号,请重新输入", Toast.LENGTH_SHORT).show();
                         } else {
-                            db.execSQL("insert into student(id,name,sex,password,number,mathScore,chineseScore,englishScore) values(?,?,?,?,?,?,?,?)", new String[]{id_, name_, sex_, password_, number_, mathScore, chineseScore, englishScore,});
+                            db.execSQL("insert into student(id,name,sex) values(?,?,?)", new String[]{id_, name_, sex_,});
                             db.setTransactionSuccessful();//事务执行成功
                             db.endTransaction();//结束事务
                             Intent intent = new Intent(addStudent_info_activity.this, admin_activity.class);
@@ -117,16 +116,16 @@ public class addStudent_info_activity extends Activity {
         String oldId = oldData.getStringExtra("id");
         oldID = oldId;
         id.setText(oldId);
-        String oldNumber = oldData.getStringExtra("number");
-        number.setText(oldNumber);
-        String oldPassword = oldData.getStringExtra("password");
-        password.setText(oldPassword);
-        int mathScore = oldData.getIntExtra("mathScore", 0);
-        math.setText(String.valueOf(mathScore));
-        int chineseScore = oldData.getIntExtra("chineseScore", 0);
-        chinese.setText(String.valueOf(chineseScore));
-        int englishScore = oldData.getIntExtra("englishScore", 0);
-        english.setText(String.valueOf(englishScore));
+//        String oldNumber = oldData.getStringExtra("number");
+//        number.setText(oldNumber);
+//        String oldPassword = oldData.getStringExtra("password");
+//        password.setText(oldPassword);
+//        int mathScore = oldData.getIntExtra("mathScore", 0);
+//        math.setText(String.valueOf(mathScore));
+//        int chineseScore = oldData.getIntExtra("chineseScore", 0);
+//        chinese.setText(String.valueOf(chineseScore));
+//        int englishScore = oldData.getIntExtra("englishScore", 0);
+//        english.setText(String.valueOf(englishScore));
     }
 
 

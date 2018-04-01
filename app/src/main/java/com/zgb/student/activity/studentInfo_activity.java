@@ -15,6 +15,7 @@ import android.widget.Button;
 import android.widget.ListView;
 
 import com.zgb.student.R;
+import com.zgb.student.model.HealthInfo;
 import com.zgb.student.tools.StudentAdapter;
 import com.zgb.student.tools.DatabaseHelper;
 import com.zgb.student.model.Student;
@@ -65,7 +66,8 @@ public class studentInfo_activity extends Activity {
                         sb.append("姓名：" + student.getName() + "\n");
                         sb.append("学号：" + student.getId() + "\n");
                         sb.append("性别：" + student.getSex() + "\n");
- //                       sb.append("健康状况：" + student.getInfo() + "\n");
+                        sb.append("测量日期：" + student.getMeasureDate() + "\n");
+                        sb.append("健康状况：" + student.getInfo() + "\n");
 //                        sb.append("手机号：" + student.getNumber() + "\n");
 //                        int math = student.getMathScore();//数学成绩
 //                        sb.append("数学成绩：" + math + "\n");
@@ -119,11 +121,13 @@ public class studentInfo_activity extends Activity {
                         intent.putExtra("name", student.getName());
                         intent.putExtra("sex", student.getSex());
                         intent.putExtra("id", student.getId());
-                        intent.putExtra("number", student.getNumber());
+                        intent.putExtra("info", student.getInfo());
+                        intent.putExtra("measureDate", student.getMeasureDate());
+//                        intent.putExtra("number", student.getNumber());
                         intent.putExtra("password", student.getPassword());
-                        intent.putExtra("mathScore", student.getMathScore());
-                        intent.putExtra("chineseScore", student.getChineseScore());
-                        intent.putExtra("englishScore", student.getEnglishScore());
+//                        intent.putExtra("mathScore", student.getMathScore());
+//                        intent.putExtra("chineseScore", student.getChineseScore());
+//                        intent.putExtra("englishScore", student.getEnglishScore());
                         startActivity(intent);
                     }
                 });
@@ -137,18 +141,20 @@ public class studentInfo_activity extends Activity {
     //初始化学生信息
     private void initStudent() {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
-        Cursor cursor = db.rawQuery("select * from student order by id", null);
+        Cursor cursor = db.rawQuery("select * from student s order by s.id", null);
         while (cursor.moveToNext()) {
             String id = cursor.getString(cursor.getColumnIndex("id"));
             String name = cursor.getString(cursor.getColumnIndex("name"));
-            String password = cursor.getString(cursor.getColumnIndex("password"));
+//            String password = cursor.getString(cursor.getColumnIndex("password"));
             String sex = cursor.getString(cursor.getColumnIndex("sex"));
-            String number = cursor.getString(cursor.getColumnIndex("number"));
-            int mathScore = cursor.getInt(cursor.getColumnIndex("mathScore"));
-            int chineseScore = cursor.getInt(cursor.getColumnIndex("chineseScore"));
-            int englishScore = cursor.getInt(cursor.getColumnIndex("englishScore"));
-            int order=cursor.getInt(cursor.getColumnIndex("ranking"));
-            studentList.add(new Student(chineseScore, englishScore, id, mathScore, name, number, password, sex,order));
+            String info = cursor.getString(cursor.getColumnIndex("info"));
+            String measureDate = cursor.getString(cursor.getColumnIndex("measureDate"));
+//            String number = cursor.getString(cursor.getColumnIndex("number"));
+//            int mathScore = cursor.getInt(cursor.getColumnIndex("mathScore"));
+//            int chineseScore = cursor.getInt(cursor.getColumnIndex("chineseScore"));
+//            int englishScore = cursor.getInt(cursor.getColumnIndex("englishScore"));
+//            int order=cursor.getInt(cursor.getColumnIndex("ranking"));
+            studentList.add(new Student(id,name,sex,null,info,measureDate));
         }
         cursor.close();
 

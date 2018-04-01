@@ -44,12 +44,12 @@ public class StudentScoreAdapter extends ArrayAdapter<Student> {
         }
 
 
-        int order = student.getOrder();
-        viewHolder.student_order.setText(String.valueOf(order));
-        viewHolder.student_name.setText(student.getName());
-        viewHolder.student_id.setText(student.getId());
-        int sum = student.getChineseScore() + student.getEnglishScore() + student.getMathScore();
-        viewHolder.student_total_score.setText(String.valueOf(sum));
+//        int order = student.getOrder();
+//        viewHolder.student_order.setText(String.valueOf(order));
+//        viewHolder.student_name.setText(student.getName());
+//        viewHolder.student_id.setText(student.getId());
+//        int sum = student.getChineseScore() + student.getEnglishScore() + student.getMathScore();
+//        viewHolder.student_total_score.setText(String.valueOf(sum));
         return view;
 
     }
