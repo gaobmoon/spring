@@ -11,7 +11,11 @@ public class Student {
     private String password;//学生登录密码
     private String info;//健康状况
     private String measureDate;//测量日期
-
+    public Student(String name, String sex, String id) {
+        this.name = name;
+        this.sex = sex;
+        this.id = id;
+    }
     public Student(String name, String sex, String id, String password, String info, String measureDate) {
         this.name = name;
         this.sex = sex;

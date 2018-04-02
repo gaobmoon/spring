@@ -79,7 +79,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="40dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="80dp"
         android:text="姓        名："
         android:textSize="20sp" />
 
@@ -88,7 +88,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginRight="30dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="70dp"
         android:layout_toRightOf="@+id/name" />
 
     <TextView
@@ -108,7 +108,7 @@
         android:layout_below="@+id/add_student_health_name"
         android:layout_marginRight="30dp"
         android:layout_marginTop="7dp"
-        android:layout_toRightOf="@+id/name" />
+        android:layout_toRightOf="@+id/sex" />
 
     <TextView
         android:id="@+id/id"
@@ -127,9 +127,45 @@
         android:layout_below="@+id/add_student_health_sex"
         android:layout_marginRight="30dp"
         android:layout_marginTop="6dp"
-        android:layout_toRightOf="@+id/name"
-  />
+        android:layout_toRightOf="@+id/id" />
 
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/id"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="25dp"
+        android:text="记录日期："
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/add_student_health_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/add_student_health_id"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="6dp"
+        android:layout_toRightOf="@+id/date" />
+
+    <TextView
+        android:id="@+id/info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/date"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="25dp"
+        android:text="记录信息："
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/add_student_health_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/add_student_health_date"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="6dp"
+        android:layout_toRightOf="@+id/info" />
     <Button
         android:id="@+id/add_student_health_sure"
         style="@style/common_button_style"
