@@ -87,7 +87,7 @@ public class addStudent_health_activity extends Activity  implements View.OnClic
 
                 Object obj = parent.getItemAtPosition(position);
                 String value=obj.toString();
-  //              Toast.makeText(addStudent_health_activity.this, value, Toast.LENGTH_SHORT).show();
+                Toast.makeText(addStudent_health_activity.this, value, Toast.LENGTH_SHORT).show();
                 Student student =query(value);
                 name.setText(student.getName());
                 idText.setText(student.getId());
@@ -136,18 +136,20 @@ public class addStudent_health_activity extends Activity  implements View.OnClic
                     if (DateUtils.isValidDate(measureDate_)) {
                         SQLiteDatabase db = dbHelper.getWritableDatabase();
                         db.beginTransaction();//开启事务
+
                         //判断学号是否重复
                         ContentValues values = new ContentValues();
                         values.put("info",info_);
-                        int num = db.update("helath",values,"id=? and measureDate=?", new String[]{id_,measureDate_,});
+                        int num = db.update("health",values,"id=? and measureDate=?", new String[]{id_,measureDate_,});
                         if (num>0) {
-                            Toast.makeText(addStudent_health_activity.this, "更新学生:"+name+"的记录信息", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(addStudent_health_activity.this, "更新学生:"+name_+"的记录信息", Toast.LENGTH_SHORT).show();
                         } else {
-                            db.execSQL("insert into helath(id,measureDate,info) values(?,?,?)", new String[]{id_, measureDate_, info_,});
+                            db.execSQL("insert into health (id,measureDate,info) values(?,?,?)", new String[]{id_, measureDate_, info_,});
                             db.setTransactionSuccessful();//事务执行成功
                             db.endTransaction();//结束事务
-                            Intent intent = new Intent(addStudent_health_activity.this, admin_activity.class);
-                            startActivity(intent);
+//                            Intent intent = new Intent(addStudent_health_activity.this, admin_activity.class);
+//                            startActivity(intent);
+                            Toast.makeText(addStudent_health_activity.this, "成功新增学生:"+name_+"的记录信息", Toast.LENGTH_SHORT).show();
                         }
                     } else {
                         Toast.makeText(addStudent_health_activity.this, "请输入正确的记录日期", Toast.LENGTH_SHORT).show();
@@ -225,6 +227,12 @@ public class addStudent_health_activity extends Activity  implements View.OnClic
         switch (v.getId()) {
             case R.id.empty:
                 search.setText("");
+                name.setText("");
+                idText.setText("");
+                sex.setText("");
+                measureDate.setText("");
+                info.setText("");
+                search.requestFocus();
                 break;
         }
     }
