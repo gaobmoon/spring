@@ -140,20 +140,16 @@ public class studentInfo_activity extends Activity {
 
     //初始化学生信息
     private void initStudent() {
-        SQLiteDatabase db = dbHelper.getWritableDatabase();
-        Cursor cursor = db.rawQuery("select * from student s order by s.id", null);
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
+        Cursor cursor = db.rawQuery("select s.id,s.name,s.sex,h.measuredate,h.info from student as s LEFT OUTER JOIN health as h ON s.id=h.id order by s.id,h.measuredate desc", null);
         while (cursor.moveToNext()) {
-            String id = cursor.getString(cursor.getColumnIndex("id"));
-            String name = cursor.getString(cursor.getColumnIndex("name"));
+            String id = cursor.getString(0);
+            String name = cursor.getString(1);
 //            String password = cursor.getString(cursor.getColumnIndex("password"));
-            String sex = cursor.getString(cursor.getColumnIndex("sex"));
-            String info = cursor.getString(cursor.getColumnIndex("info"));
-            String measureDate = cursor.getString(cursor.getColumnIndex("measureDate"));
-//            String number = cursor.getString(cursor.getColumnIndex("number"));
-//            int mathScore = cursor.getInt(cursor.getColumnIndex("mathScore"));
-//            int chineseScore = cursor.getInt(cursor.getColumnIndex("chineseScore"));
-//            int englishScore = cursor.getInt(cursor.getColumnIndex("englishScore"));
-//            int order=cursor.getInt(cursor.getColumnIndex("ranking"));
+            String sex = cursor.getString(2);
+            String measureDate = cursor.getString(3);
+            String info = cursor.getString(4);
+
             studentList.add(new Student(name,sex,id,null,info,measureDate));
         }
         cursor.close();

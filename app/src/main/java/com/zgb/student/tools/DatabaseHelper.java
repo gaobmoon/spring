@@ -15,8 +15,8 @@ import java.io.IOException;
 public class DatabaseHelper extends SQLiteOpenHelper {
     private static DatabaseHelper instance;
     public static final String CREATE_ADMIN = "create table admin(id integer primary key autoincrement, name text,password text)";//创建管理员表
-   public static final String CREATE_HEALTH = "create table health(id text, measureDate text,info text)";//创建健康表
-    public static final String CREATE_STUDENT = "create table student(id text primary key,name text,password text,sex text,number text,mathScore integer,chineseScore integer,englishScore integer, measureDate text,info text)";//创建学生表
+   public static final String CREATE_HEALTH = "create table health(id text, student_measureDate text,student_info text)";//创建健康表
+    public static final String CREATE_STUDENT = "create table student(id text primary key,name text,password text,sex text,number text,mathScore integer,chineseScore integer,englishScore integer, student_measureDate text,student_info text)";//创建学生表
     public static final String DB_NAME = "student.db";
 
     private DatabaseHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {

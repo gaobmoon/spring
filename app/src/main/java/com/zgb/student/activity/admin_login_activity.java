@@ -101,7 +101,7 @@ public class admin_login_activity extends Activity {
                     public void onClick(DialogInterface dialog, int which) {
                         String codeInfo = code.getText().toString();
                         //注册码要为world
-                        if (codeInfo.equals("gb")) {
+                        if (codeInfo.equals("g")) {
                             String nameInfo = name.getText().toString();
                             String firstPasswordInfo = firstPassword.getText().toString();
                             String secondPasswordInfo = secondPassword.getText().toString();

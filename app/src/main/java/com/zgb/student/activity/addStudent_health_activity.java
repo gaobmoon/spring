@@ -14,8 +14,9 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 import android.widget.ListView;
+import android.widget.Toast;
+
 import com.zgb.student.R;
 import com.zgb.student.model.Student;
 import com.zgb.student.tools.DatabaseHelper;
@@ -23,10 +24,8 @@ import com.zgb.student.util.DateUtils;
 import com.zgb.student.util.SearchAdapter;
 
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import java.util.Map;
-import java.util.TimeZone;
 
 
 /**
@@ -38,23 +37,13 @@ public class addStudent_health_activity extends Activity  implements View.OnClic
     private EditText sex;
     private EditText idText;
     private EditText measureDate;
-    private EditText password;
+//    private EditText password;
     private EditText info;
-    private EditText mEditText;
-    private ListView mListView;
-
-
     private LinearLayout empty;
     private AutoCompleteTextView search;
-
-    Cursor cursor;
-
-    private String oldID;//用于防治修改信息时将ID也修改了，而原始的有该ID的学生信息还保存在数据库中
-
-
     private Button sure;//确定按钮
     private DatabaseHelper dbHelper;
-    Intent oldData;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,7 +61,7 @@ public class addStudent_health_activity extends Activity  implements View.OnClic
         measureDate= (EditText) findViewById(R.id.add_student_health_date);
         info=(EditText) findViewById(R.id.add_student_health_info);
         dbHelper = DatabaseHelper.getInstance(this);
-        List<String> studentList =query();
+        List<String> studentList =getAllStudent();
         // 自动提示适配器
         //      ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, str);
         // 支持拼音检索
@@ -104,19 +93,6 @@ public class addStudent_health_activity extends Activity  implements View.OnClic
         });
 
 
-    //    number = (EditText) findViewById(R.idText.add_student_layout_number);
-   //     password = (EditText) findViewById(R.idText.add_student_layout_password);
-  //      math = (EditText) findViewById(R.idText.add_student_layout_math);
-    //    chinese = (EditText) findViewById(R.idText.add_student_layout_chinese);
-    //    english = (EditText) findViewById(R.idText.add_student_layout_english);
-
-
-        oldData = getIntent();
-        if (oldData.getStringExtra("haveData").equals("true")) {
-            initInfo();//恢复旧数据
-        }
-
-
         sure = (Button) findViewById(R.id.add_student_health_sure);
         //将数据插入数据库
         sure.setOnClickListener(new View.OnClickListener() {
@@ -142,14 +118,14 @@ public class addStudent_health_activity extends Activity  implements View.OnClic
                         values.put("info",info_);
                         int num = db.update("health",values,"id=? and measureDate=?", new String[]{id_,measureDate_,});
                         if (num>0) {
-                            Toast.makeText(addStudent_health_activity.this, "更新学生:"+name_+"的记录信息", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(addStudent_health_activity.this, "更新"+name_+"同学的记录信息", Toast.LENGTH_SHORT).show();
                         } else {
                             db.execSQL("insert into health (id,measureDate,info) values(?,?,?)", new String[]{id_, measureDate_, info_,});
                             db.setTransactionSuccessful();//事务执行成功
                             db.endTransaction();//结束事务
 //                            Intent intent = new Intent(addStudent_health_activity.this, admin_activity.class);
 //                            startActivity(intent);
-                            Toast.makeText(addStudent_health_activity.this, "成功新增学生:"+name_+"的记录信息", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(addStudent_health_activity.this, "成功新增"+name_+"同学的记录信息", Toast.LENGTH_SHORT).show();
                         }
                     } else {
                         Toast.makeText(addStudent_health_activity.this, "请输入正确的记录日期", Toast.LENGTH_SHORT).show();
@@ -165,26 +141,6 @@ public class addStudent_health_activity extends Activity  implements View.OnClic
 
     }
 
-    //恢复旧数据
-    private void initInfo() {
-        String oldName = oldData.getStringExtra("name");
-        name.setText(oldName);
-        String oldSex = oldData.getStringExtra("sex");
-        sex.setText(oldSex);
-        String oldId = oldData.getStringExtra("idText");
-        oldID = oldId;
-        idText.setText(oldId);
-//        String oldNumber = oldData.getStringExtra("number");
-//        number.setText(oldNumber);
-//        String oldPassword = oldData.getStringExtra("password");
-//        password.setText(oldPassword);
-//        int mathScore = oldData.getIntExtra("mathScore", 0);
-//        math.setText(String.valueOf(mathScore));
-//        int chineseScore = oldData.getIntExtra("chineseScore", 0);
-//        chinese.setText(String.valueOf(chineseScore));
-//        int englishScore = oldData.getIntExtra("englishScore", 0);
-//        english.setText(String.valueOf(englishScore));
-    }
 
 
 
@@ -202,19 +158,17 @@ public class addStudent_health_activity extends Activity  implements View.OnClic
         return student;
 
     }
-    //初始化学生信息
-    private List<String> query() {
+    //提取所有学生信息
+    private List<String> getAllStudent() {
         List<String> studentList = new ArrayList<String>();
         SQLiteDatabase db = dbHelper.getReadableDatabase();
 
-        Cursor cursor = db.rawQuery("select * from student s  order by s.id", null);
+        Cursor cursor = db.rawQuery("select name from student s  order by s.id", null);
         Map<String, Object> map;
         while (cursor.moveToNext()) {
-
             String name = cursor.getString(cursor.getColumnIndex("name"));
 //            String password = cursor.getString(cursor.getColumnIndex("password"));
-            String sex = cursor.getString(cursor.getColumnIndex("sex"));
-
+//            String sex = cursor.getString(cursor.getColumnIndex("sex"));
             studentList.add(name);
         }
         cursor.close();
@@ -223,6 +177,9 @@ public class addStudent_health_activity extends Activity  implements View.OnClic
     }
 
     @Override
+    /**
+     * 清楚搜索条件时候，清空相应学生信息
+     */
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.empty:

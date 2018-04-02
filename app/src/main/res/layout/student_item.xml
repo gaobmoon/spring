@@ -11,25 +11,40 @@
     <!--listView的布局-->
     <TextView
         android:id="@+id/student_name"
-        android:layout_width="wrap_content"
+        android:layout_width="60dp"
+        android:layout_height="20dp"
+        android:layout_marginLeft="8dp"
         android:layout_weight="1"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="50dp"
-        android:textSize="20sp" />
+        android:textSize="12sp" />
 
     <TextView
         android:id="@+id/student_id"
+        android:layout_width="80dp"
+        android:layout_height="20dp"
         android:layout_weight="1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="20sp" />
+        android:textSize="12sp" />
 
-    <ImageView
-        android:id="@+id/student_image"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1" />
+    <TextView
+        android:id="@+id/student_sex"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_weight="1"
+        android:textSize="12sp"/>
 
+    <TextView
+        android:id="@+id/student_measureDate"
+        android:layout_width="120dp"
+        android:layout_height="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_weight="1"
+        android:textSize="12sp" />
 
+    <TextView
+        android:id="@+id/student_info"
+        android:layout_width="80dp"
+        android:layout_height="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_weight="1"
+        android:textSize="12sp" />
     </LinearLayout>
 </LinearLayout>

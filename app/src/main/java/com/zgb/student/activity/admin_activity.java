@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
-import android.widget.TextView;
 
 import com.zgb.student.R;
 
@@ -16,9 +15,9 @@ import com.zgb.student.R;
  */
 public class admin_activity extends Activity {
 
-    private Button select;//查询学生信息按钮
-    private Button add;//添加学生信息按钮
-    private Button addHealth;//增加学生健康信息
+    private Button showStudentsButton;//查询学生信息按钮
+    private Button addStudentButton;//添加学生信息按钮
+    private Button addHealthButton;//增加学生健康信息
 //    private TextView forceOffline;//强制下线
 
     @Override
@@ -27,12 +26,12 @@ public class admin_activity extends Activity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.admin_layout);
 
-        select = (Button) findViewById(R.id.admin_activity_select);
-        add = (Button) findViewById(R.id.admin_activity_add);
-        addHealth = (Button) findViewById(R.id.admin_activity_health);
+        showStudentsButton = (Button) findViewById(R.id.admin_activity_select);
+        addStudentButton = (Button) findViewById(R.id.admin_activity_add);
+        addHealthButton = (Button) findViewById(R.id.admin_activity_health);
   //      forceOffline = (TextView) findViewById(R.id.admin_activity_forceOffline);
 
-        select.setOnClickListener(new View.OnClickListener() {
+        showStudentsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(admin_activity.this, studentInfo_activity.class);
@@ -41,7 +40,7 @@ public class admin_activity extends Activity {
             }
         });
 
-        add.setOnClickListener(new View.OnClickListener() {
+        addStudentButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(admin_activity.this, addStudent_info_activity.class);
@@ -51,11 +50,11 @@ public class admin_activity extends Activity {
         });
 
 
-        addHealth.setOnClickListener(new View.OnClickListener() {
+        addHealthButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(admin_activity.this,addStudent_health_activity.class);
-                intent.putExtra("haveData","false");
+//                intent.putExtra("haveData","false");
                 startActivity(intent);
             }
         });
