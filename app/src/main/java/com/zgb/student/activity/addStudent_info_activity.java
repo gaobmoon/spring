@@ -1,7 +1,9 @@
 package com.zgb.student.activity;
 
 import android.app.Activity;
-import android.content.Intent;
+import android.app.AlertDialog;
+import android.content.ContentValues;
+import android.content.DialogInterface;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -27,14 +29,10 @@ public class addStudent_info_activity extends Activity {
     private EditText measureDate;
     private EditText password;
     private EditText info;
-
-
-    private String oldID;//用于防治修改信息时将ID也修改了，而原始的有该ID的学生信息还保存在数据库中
-
-
-    private Button sure;//确定按钮
+//    private String oldID;//用于防治修改信息时将ID也修改了，而原始的有该ID的学生信息还保存在数据库中
+    private Button sureButton;//确定按钮
     private DatabaseHelper dbHelper;
-    Intent oldData;
+//    Intent oldData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,91 +40,88 @@ public class addStudent_info_activity extends Activity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.add_student_info_layout);
 
+        addSureButtonEvent();
+    }
+    /**
+     * 新增学生基本信息
+     */
+    private void addSureButtonEvent(){
+
         name = (EditText) findViewById(R.id.add_student_layout_name);
         sex = (EditText) findViewById(R.id.add_student_layout_sex);
         id = (EditText) findViewById(R.id.add_student_layout_id);
-    //    number = (EditText) findViewById(R.id.add_student_layout_number);
-   //     password = (EditText) findViewById(R.id.add_student_layout_password);
-  //      math = (EditText) findViewById(R.id.add_student_layout_math);
-    //    chinese = (EditText) findViewById(R.id.add_student_layout_chinese);
-    //    english = (EditText) findViewById(R.id.add_student_layout_english);
 
         dbHelper = DatabaseHelper.getInstance(this);
 
-        oldData = getIntent();
-        if (oldData.getStringExtra("haveData").equals("true")) {
-            initInfo();//恢复旧数据
-        }
+//        oldData = getIntent();
+//        if (oldData.getStringExtra("haveData").equals("true")) {
+//            initInfo();//恢复旧数据
+//        }
 
-
-        sure = (Button) findViewById(R.id.add_student_layout_sure);
+        sureButton = (Button) findViewById(R.id.add_student_layout_sure);
         //将数据插入数据库
-        sure.setOnClickListener(new View.OnClickListener() {
+        sureButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //sex不能为空否则程序崩溃，因为在StudentAdapter中有一个ImageView要设置图片
-                //我这里要求id,name,sex都不能为空
-                String id_ = id.getText().toString();
-                String name_ = name.getText().toString();
-                String sex_ = sex.getText().toString();
-//                String password_ = password.getText().toString();
-//                String number_ = number.getText().toString();
-//                String mathScore = math.getText().toString();
-//                String chineseScore = chinese.getText().toString();
-//                String englishScore = english.getText().toString();
+                //id,name,sex都不能为空
+                final String id_ = id.getText().toString();
+                final String name_ = name.getText().toString();
+                final String sex_ = sex.getText().toString();
 
-                if (!TextUtils.isEmpty(id_) && !TextUtils.isEmpty(name_) && !TextUtils.isEmpty(sex_)) {
-
-                    if (sex_.matches("[女|男]")) {
-                        SQLiteDatabase db = dbHelper.getWritableDatabase();
-                        db.beginTransaction();//开启事务
-                        db.execSQL("delete from student where id=?", new String[]{oldID});//删除旧数据
-
-                        //判断学号是否重复
-                        Cursor cursor = db.rawQuery("select * from student where id=?", new String[]{id_});
-                        if (cursor.moveToNext()) {
-                            Toast.makeText(addStudent_info_activity.this, "已有学生使用该学号,请重新输入", Toast.LENGTH_SHORT).show();
-                        } else {
-                            db.execSQL("insert into student(id,name,sex) values(?,?,?)", new String[]{id_, name_, sex_,});
-                            db.setTransactionSuccessful();//事务执行成功
-                            db.endTransaction();//结束事务
-                            Intent intent = new Intent(addStudent_info_activity.this, admin_activity.class);
-                            startActivity(intent);
-                        }
-                    } else {
-                        Toast.makeText(addStudent_info_activity.this, "请输入正确的性别信息", Toast.LENGTH_SHORT).show();
-                    }
-
-
-                } else {
-                    Toast.makeText(addStudent_info_activity.this, "姓名，学号，性别均不能为空", Toast.LENGTH_SHORT).show();
+                if (TextUtils.isEmpty(name_)) {
+                    Toast.makeText(addStudent_info_activity.this, "请填写姓名!", Toast.LENGTH_SHORT).show();
+                    return;
                 }
 
+                if (TextUtils.isEmpty(sex_)) {
+                    Toast.makeText(addStudent_info_activity.this, "请填写性别!", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                if (!sex_.matches("[女|男]")) {
+                    Toast.makeText(addStudent_info_activity.this, "请填写正确性别!", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                if (TextUtils.isEmpty(id_)) {
+                    Toast.makeText(addStudent_info_activity.this, "请填写学号!", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                SQLiteDatabase db = dbHelper.getWritableDatabase();
+                //判断学号是否重复
+                Cursor cursor = db.rawQuery("select id,sex,name from student where id=?", new String[]{id_});
+                if (cursor.moveToNext()) {
+                    String sId=cursor.getString(0);
+                    String sSex=cursor.getString(1);
+                    String sName=cursor.getString(2);
+                    new AlertDialog.Builder(addStudent_info_activity.this).setTitle("确定更新吗?")//设置对话框标题
+                            .setMessage("学号"+sId+"已经被"+sName+"同学使用!")//设置显示的内容
+                            .setPositiveButton("确定",new DialogInterface.OnClickListener() {//添加确定按钮
+
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {//确定按钮的响应事件
+                                    ContentValues values = new ContentValues();
+                                    values.put("name",name_);
+                                    values.put("sex",sex_);
+                                    int num = dbHelper.getWritableDatabase().update("student",values,"id=?", new String[]{id_});
+                                    if(num>0){
+                                        Toast.makeText(addStudent_info_activity.this, "更新学号"+id_+"同学的基本信息", Toast.LENGTH_SHORT).show();
+                                    }
+                                }
+                            }).setNegativeButton("取消",new DialogInterface.OnClickListener() {//添加返回按钮
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {//响应事件
+                                    Toast.makeText(addStudent_info_activity.this, "请输入正确学号!", Toast.LENGTH_SHORT).show();
+                                }
+                    }).show();//在按键响应事件中显示此对话框
+
+                } else {
+                    db.execSQL("insert into student(id,name,sex) values(?,?,?)", new String[]{id_, name_, sex_,});
+                    Toast.makeText(addStudent_info_activity.this, "新增"+name_+"同学的基本信息!", Toast.LENGTH_SHORT).show();
+                }
+                cursor.close();
             }
         });
 
     }
-
-    //恢复旧数据
-    private void initInfo() {
-        String oldName = oldData.getStringExtra("name");
-        name.setText(oldName);
-        String oldSex = oldData.getStringExtra("sex");
-        sex.setText(oldSex);
-        String oldId = oldData.getStringExtra("id");
-        oldID = oldId;
-        id.setText(oldId);
-//        String oldNumber = oldData.getStringExtra("number");
-//        number.setText(oldNumber);
-//        String oldPassword = oldData.getStringExtra("password");
-//        password.setText(oldPassword);
-//        int mathScore = oldData.getIntExtra("mathScore", 0);
-//        math.setText(String.valueOf(mathScore));
-//        int chineseScore = oldData.getIntExtra("chineseScore", 0);
-//        chinese.setText(String.valueOf(chineseScore));
-//        int englishScore = oldData.getIntExtra("englishScore", 0);
-//        english.setText(String.valueOf(englishScore));
-    }
-
-
 }
