@@ -11,8 +11,20 @@ android {
         versionName "1.0"
     }
     buildTypes {
+        debug{
+            //是否优化zip
+            zipAlignEnabled true
+            // 移除无用的resource文件
+            shrinkResources true
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
         release {
-            minifyEnabled false
+            //是否优化zip
+            zipAlignEnabled true
+            // 移除无用的resource文件
+            shrinkResources true
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
