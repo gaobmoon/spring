@@ -39,7 +39,7 @@ public class addStudent_health_activity extends Activity  implements View.OnClic
     private EditText info;
     private LinearLayout empty;
     private AutoCompleteTextView search;
-    private Button sure;//确定按钮
+    private Button sureButton;//确定按钮
     private DatabaseHelper dbHelper;
 
 
@@ -79,68 +79,13 @@ public class addStudent_health_activity extends Activity  implements View.OnClic
                 name.setText(student.getName());
                 idText.setText(student.getId());
                 sex.setText(student.getSex());
-                name.setFocusable(false);
-                name.setFocusableInTouchMode(false);
-                idText.setFocusable(false);
-                idText.setFocusableInTouchMode(false);
-                sex.setFocusable(false);
-                sex.setFocusableInTouchMode(false);
                 measureDate.setText(DateUtils.getSystemTime());
             }
 
         });
 
-
-        sure = (Button) findViewById(R.id.add_student_health_sure);
-        //将数据插入数据库
-        sure.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                //我这里要求id,measureDate,info都不能为空
-                String id_ = idText.getText().toString();
-                String name_ = name.getText().toString();
-//                String sex_ = sex.getText().toString();
-                String info_ = info.getText().toString();
-                String measureDate_ = measureDate.getText().toString();
-
-
-                if (!TextUtils.isEmpty(id_) && !TextUtils.isEmpty(info_) && !TextUtils.isEmpty(measureDate_)) {
-
-                    if (DateUtils.isValidDate(measureDate_)) {
-                        SQLiteDatabase db = dbHelper.getWritableDatabase();
-                        db.beginTransaction();//开启事务
-
-                        //判断学号是否重复
-                        ContentValues values = new ContentValues();
-                        values.put("info",info_);
-                        int num = db.update("health",values,"id=? and measureDate=?", new String[]{id_,measureDate_,});
-                        if (num>0) {
-                            Toast.makeText(addStudent_health_activity.this, "更新"+name_+"同学的记录信息", Toast.LENGTH_SHORT).show();
-                        } else {
-                            db.execSQL("insert into health (id,measureDate,info) values(?,?,?)", new String[]{id_, measureDate_, info_,});
-                            db.setTransactionSuccessful();//事务执行成功
-                            db.endTransaction();//结束事务
-//                            Intent intent = new Intent(addStudent_health_activity.this, admin_activity.class);
-//                            startActivity(intent);
-                            Toast.makeText(addStudent_health_activity.this, "成功新增"+name_+"同学的记录信息", Toast.LENGTH_SHORT).show();
-                        }
-                    } else {
-                        Toast.makeText(addStudent_health_activity.this, "请输入正确的记录日期", Toast.LENGTH_SHORT).show();
-                    }
-
-
-                } else {
-                    Toast.makeText(addStudent_health_activity.this, "记录日期，记录信息均不能为空", Toast.LENGTH_SHORT).show();
-                }
-
-            }
-        });
-
+        addSureButtonEvent();
     }
-
-
-
 
     //初始化学生信息
     private Student query(String name) {
@@ -192,4 +137,55 @@ public class addStudent_health_activity extends Activity  implements View.OnClic
         }
     }
 
+    /**
+     * 新增健康记录信息
+     */
+    private void addSureButtonEvent(){
+        sureButton = (Button) findViewById(R.id.add_student_health_sure);
+        //将数据插入数据库
+        sureButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                //我这里要求id,measureDate,info都不能为空
+                String id_ = idText.getText().toString();
+                String name_ = name.getText().toString();
+//                String sex_ = sex.getText().toString();
+                String info_ = info.getText().toString();
+                String measureDate_ = measureDate.getText().toString();
+
+                if (TextUtils.isEmpty(id_)){
+                    Toast.makeText(addStudent_health_activity.this, "请通过搜索框选择姓名", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if (TextUtils.isEmpty(measureDate_)){
+                    Toast.makeText(addStudent_health_activity.this, "请填写记录日期", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if (!DateUtils.isValidDate(measureDate_)){
+                    Toast.makeText(addStudent_health_activity.this, "请填写正确记录日期,形如:yyyy-MM-dd HH:mm:ss", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if (TextUtils.isEmpty(info_)){
+                    Toast.makeText(addStudent_health_activity.this, "请填写记录信息", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                SQLiteDatabase db = dbHelper.getWritableDatabase();
+                db.beginTransaction();//开启事务
+                ContentValues values = new ContentValues();
+                values.put("info",info_);
+                int num = db.update("health",values,"id=? and measureDate=?", new String[]{id_,measureDate_,});
+                if (num>0) {
+                    Toast.makeText(addStudent_health_activity.this, "更新"+name_+"同学的记录信息", Toast.LENGTH_SHORT).show();
+                } else {
+                    db.execSQL("insert into health (id,measureDate,info) values(?,?,?)", new String[]{id_, measureDate_, info_,});
+//                            Intent intent = new Intent(addStudent_health_activity.this, admin_activity.class);
+//                            startActivity(intent);
+                    Toast.makeText(addStudent_health_activity.this, "成功新增"+name_+"同学的记录信息", Toast.LENGTH_SHORT).show();
+                }
+                db.setTransactionSuccessful();//事务执行成功
+                db.endTransaction();//结束事务
+            }
+        });
+    }
 }
