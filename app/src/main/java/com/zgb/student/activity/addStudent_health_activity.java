@@ -2,7 +2,6 @@ package com.zgb.student.activity;
 
 import android.app.Activity;
 import android.content.ContentValues;
-import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -14,7 +13,6 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.ListView;
 import android.widget.Toast;
 
 import com.zgb.student.R;
@@ -76,7 +74,7 @@ public class addStudent_health_activity extends Activity  implements View.OnClic
 
                 Object obj = parent.getItemAtPosition(position);
                 String value=obj.toString();
-                Toast.makeText(addStudent_health_activity.this, value, Toast.LENGTH_SHORT).show();
+      //          Toast.makeText(addStudent_health_activity.this, value, Toast.LENGTH_SHORT).show();
                 Student student =query(value);
                 name.setText(student.getName());
                 idText.setText(student.getId());

@@ -11,40 +11,79 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
 import android.widget.AdapterView;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.zgb.student.R;
 import com.zgb.student.model.HealthInfo;
 import com.zgb.student.tools.StudentAdapter;
 import com.zgb.student.tools.DatabaseHelper;
 import com.zgb.student.model.Student;
+import com.zgb.student.util.DateUtils;
+import com.zgb.student.util.SearchAdapter;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 /**
  * 展示学生信息的activity
  * Created by zgb on 2018.03.31
  */
-public class studentInfo_activity extends Activity {
+public class studentInfo_activity extends Activity  implements View.OnClickListener {
     private List<Student> studentList = new ArrayList<Student>();
     private DatabaseHelper dbHelper;
     private ListView listView;
     private StudentAdapter adapter;
-
+    private LinearLayout empty;
+    private AutoCompleteTextView search;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.studentinfo_activity_layout);
-        dbHelper = DatabaseHelper.getInstance(this);
-        initStudent();//从数据库中检索所有学生信息
-        adapter = new StudentAdapter(studentInfo_activity.this, R.layout.student_item, studentList);
         listView = (ListView) findViewById(R.id.list_view);
-        listView.setAdapter(adapter);
+
+        dbHelper = DatabaseHelper.getInstance(this);
+        empty = (LinearLayout) findViewById(R.id.emptyStudent);
+        empty.setOnClickListener(this);
+        search = (AutoCompleteTextView) findViewById(R.id.searchStudent);
+        // 支持拼音检索
+        SearchAdapter<String> searchAdapter = new SearchAdapter<String>(studentInfo_activity.this,
+                android.R.layout.simple_list_item_1, getAllStudent(), SearchAdapter.ALL);
+        search.setAdapter(searchAdapter);
+        search.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            @Override
+
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                Object obj = parent.getItemAtPosition(position);
+                String value=obj.toString();
+    //            Toast.makeText(studentInfo_activity.this, value, Toast.LENGTH_SHORT).show();
+                queryStudent(value);//从数据库中检索学生信息
+                if(studentList.size()>0){
+                    adapter = new StudentAdapter(studentInfo_activity.this, R.layout.student_item, studentList);
+
+                    listView.setAdapter(adapter);
+                }
+            }
+
+        });
+        initStudent();//从数据库中检索所有学生信息
+        if(studentList.size()>0){
+            adapter = new StudentAdapter(studentInfo_activity.this, R.layout.student_item, studentList);
+            listView.setAdapter(adapter);
+        }
 
 
-        //listView点击事件
+
+
+
+/*        //listView点击事件
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, final int position, long id) {
@@ -134,14 +173,31 @@ public class studentInfo_activity extends Activity {
 
                 builder.create().show();
             }
-        });
+        });*/
 
     }
+    //初始化学生信息
+    private void queryStudent(String name) {
+        studentList.clear();
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
+        Cursor cursor = db.rawQuery("select s.id,s.name,s.sex,h.measuredate,h.info from (select id,name,sex from student where name=?) as s LEFT JOIN health as h ON s.id=h.id order by s.id,h.measuredate desc", new String[]{name});
+        while (cursor.moveToNext()) {
+            String id = cursor.getString(0);
+    //        String name = cursor.getString(1);
+//            String password = cursor.getString(cursor.getColumnIndex("password"));
+            String sex = cursor.getString(2);
+            String measureDate = cursor.getString(3);
+            String info = cursor.getString(4);
 
+            studentList.add(new Student(name,sex,id,null,info,measureDate));
+        }
+        cursor.close();
+    }
     //初始化学生信息
     private void initStudent() {
+        studentList.clear();
         SQLiteDatabase db = dbHelper.getReadableDatabase();
-        Cursor cursor = db.rawQuery("select s.id,s.name,s.sex,h.measuredate,h.info from student as s LEFT OUTER JOIN health as h ON s.id=h.id order by s.id,h.measuredate desc", null);
+        Cursor cursor = db.rawQuery("select s.id,s.name,s.sex,h.measuredate,h.info from student as s LEFT JOIN health as h ON s.id=h.id order by s.id,h.measuredate desc", null);
         while (cursor.moveToNext()) {
             String id = cursor.getString(0);
             String name = cursor.getString(1);
@@ -153,9 +209,37 @@ public class studentInfo_activity extends Activity {
             studentList.add(new Student(name,sex,id,null,info,measureDate));
         }
         cursor.close();
-
+    }
+    @Override
+    /**
+     * 关闭搜索条件时，显示全部数据
+     */
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.emptyStudent:
+                search.setText("");
+                search.requestFocus();
+                initStudent();//从数据库中检索所有学生信息
+                if(studentList.size()>0){
+                    adapter = new StudentAdapter(studentInfo_activity.this, R.layout.student_item, studentList);
+                    listView.setAdapter(adapter);
+                }
+                break;
+        }
+    }
+    //提取所有学生信息
+    private List<String> getAllStudent() {
+        List<String> studentList = new ArrayList<String>();
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
+        Cursor cursor = db.rawQuery("select name from student s  order by s.id", null);
+        while (cursor.moveToNext()) {
+            String name = cursor.getString(cursor.getColumnIndex("name"));
+//            String password = cursor.getString(cursor.getColumnIndex("password"));
+//            String sex = cursor.getString(cursor.getColumnIndex("sex"));
+            studentList.add(name);
+        }
+        cursor.close();
+        return studentList;
 
     }
-
-
 }
