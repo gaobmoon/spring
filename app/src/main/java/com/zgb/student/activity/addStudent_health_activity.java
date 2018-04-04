@@ -17,6 +17,7 @@ import android.widget.Toast;
 
 import com.zgb.student.R;
 import com.zgb.student.model.Student;
+import com.zgb.student.tools.AndroidBug5497Workaround;
 import com.zgb.student.tools.DatabaseHelper;
 import com.zgb.student.util.DateUtils;
 import com.zgb.student.util.SearchAdapter;
@@ -48,7 +49,7 @@ public class addStudent_health_activity extends Activity  implements View.OnClic
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.add_student_health);
-
+       // AndroidBug5497Workaround.assistActivity(this);
         empty = (LinearLayout) findViewById(R.id.empty);
         empty.setOnClickListener(this);
         search = (AutoCompleteTextView) findViewById(R.id.search);

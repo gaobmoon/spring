@@ -16,6 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.zgb.student.R;
+import com.zgb.student.tools.AndroidBug5497Workaround;
 import com.zgb.student.tools.DatabaseHelper;
 
 /**
@@ -36,9 +37,8 @@ public class admin_login_activity extends Activity {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.admin_login_layout);
-
+   //     AndroidBug5497Workaround.assistActivity(this);
         dbHelper = DatabaseHelper.getInstance(this);
-
 
         name = (EditText) findViewById(R.id.admin_login_activity_name_input);
         password = (EditText) findViewById(R.id.admin_login_activity_password_input);
